@@ -1,11 +1,9 @@
 <?php
-    $file = fopen("names.txt","w");
-    if($file){
-        echo 'okey';
-    }else{
-        die('NOT ABLE TO CREATE A FILE'.mysqli_error($file));
-    }
+    // Fille writing line by line Manually
+    // $file = fopen("sms.txt","w");
+    // fwrite($file,'Maquiz1'."\n");
+    // fwrite($file,'Maquiz2'."\n");
+    // fwrite($file,'Maquiz3'."\n");
     
     
-
 ?>
