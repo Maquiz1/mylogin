@@ -127,26 +127,37 @@
 
     //Upload a file
    
-    $name = $_FILES['file']['name'];
-    $tempName = $_FILES['file']['tmp_name'];
-    //$size = $_FILES['file']['size'];
-    //$type = $_FILES['file']['type'];
-    //$error = $_FILES['file']['error'];
-    if(isset($name)){
-        if(!empty($name)){
-            $location = 'uploads';
-            $uploadedFiles = move_uploaded_file($tempName,$location.$name);
+    // $name = $_FILES['file']['name'];
+    // $tempName = $_FILES['file']['tmp_name'];
+    // $size = $_FILES['file']['size'];
+    // $type = $_FILES['file']['type'];
+    // $extension = strtolower(substr($name,strpos($name,'.')+1));
+    // //$error = $_FILES['file']['error'];
+    // if(isset($name)){
+    //     if(!empty($name)){
+    //         $location = "uploads/";
+    //         $sizeMax = 2097152;
+
+    //         if($size <= $sizeMax && ($type == 'image/jpeg' || $type == 'image/jpg') && ($extension == 'jpeg' || $extension == 'jpg')){
+    //             $targetLocation = basename($location.$name);
+    //             $uploadedFiles = move_uploaded_file($tempName,$targetLocation);
                         
-            if($uploadedFiles){
+    //             if($uploadedFiles){
                 
-                echo 'Your file hase been uploaded';
-            }else{
-                echo 'Their is an error uploading a file'.' '.$name;
-            }
-        }else{
-            echo 'please choose a file';
-        }
-    }
+    //                 echo 'Your file hase been uploaded';
+    //             }else{
+    //                 echo 'Their is an error uploading a file'.' '.$name;
+    //             }
+
+    //         }else{
+                
+    //                 echo 'Size should not exceed 2MBs and JPEG OR JPG';
+    //         }
+            
+    //     }else{
+    //         echo 'please choose a file';
+    //     }
+    // }
   
 ?>
 
