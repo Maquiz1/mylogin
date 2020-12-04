@@ -73,26 +73,84 @@
     //  fclose($file);
 
         
-    //Listing Files
-    $directory = 'files';
-    if($openDir = opendir($directory)){
-        while($readDir = readdir($openDir)){
-            echo $readDir.'<br>';
-        }
-            echo 'There is an error Listing your Files';
-        
-    }else{
-        echo 'There is an error Opening Directory';
-    }    
-    
+    //Listing Files in a directories
+    // $directory = 'files';
+    // if($openDir = opendir($directory)){
+    //     echo 'The List inside the '.' '.'<strong>'.$directory.'</strong>'. ' '.'are ';
+    //     while($readDir = readdir($openDir)){
+    //         if($readDir != '..'){
+    //             echo '<a href="'.$directory.'/'.$readDir.'">'.$readDir.'</a><br>';
+    //         }
+           
+    //     }
+                
+    // }else{
+    //     echo 'There is an error Opening Directory/Listing your Files';
+    // }    
     
 
+    //  Check if file exists.
+    //  $fileName = 'delete.txt';
+    //  $fileExists = file_exists($fileName);
+    //  if($fileExists){
+    //      echo 'File Already exists';
+    //  }else{
+    //     $file = fopen($fileName,'w'); 
+    //     $fWrite = fwrite($file,'Jane');
+    //     fclose($file);
+
+     //}
+
+
+    //  //  Delete a file.
+    //  $fileName = 'delete.txt';
+    //  $fileDelete = unlink($fileName);
+    //  if(@$fileDelete){                           @ Symbol remove php warning
+    //      echo 'File Has been Deleted';
+    //  }else{
+    //     echo  'File can not be deleted';
+
+    //  }
+     
+    //  Rename a file.
+    // $fileName = '5302txt';
+    // $newName = rand(1000,9999);
+    // $fileRename = rename($fileName,$newName.'.txt');
     
-    
-    
+    // if($fileRename){
+    //     echo 'File Has been renamed to'. ' ' .$fileRename.'.txt';
+    // }else{
+    //    echo  'File can not be renamed';
+
+    // }
+
+
+    //Upload a file
+   
+    $name = $_FILES['file']['name'];
+    $tempName = $_FILES['file']['tmp_name'];
+    //$size = $_FILES['file']['size'];
+    //$type = $_FILES['file']['type'];
+    //$error = $_FILES['file']['error'];
+    if(isset($name)){
+        if(!empty($name)){
+            $location = 'uploads/';
+            $uploadedFiles = move_uploaded_file($tempName,$location.'/'.$name);
+                        
+            if($uploadedFiles){
+                
+                echo 'Your file hase been uploaded';
+            }else{
+                echo 'Their is an error uploading a file'.' '.$name;
+            }
+        }else{
+            echo 'please choose a file';
+        }
+    }
+  
 ?>
 
-<!-- <form action="file.php" method="POST">
-    <input type="text" name="name"> <br><br>
+<form action="file.php" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file"> <br><br>
     <input type="submit" name="submit" value="Submit">
-</form> -->
+</form>
