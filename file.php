@@ -134,8 +134,8 @@
     //$error = $_FILES['file']['error'];
     if(isset($name)){
         if(!empty($name)){
-            $location = 'uploads/';
-            $uploadedFiles = move_uploaded_file($tempName,$location.'/'.$name);
+            $location = 'uploads';
+            $uploadedFiles = move_uploaded_file($tempName,$location.$name);
                         
             if($uploadedFiles){
                 
