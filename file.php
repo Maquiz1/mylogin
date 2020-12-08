@@ -30,7 +30,7 @@
     }
     */
     
-    //file Reading line by line with FWRITE METHOD
+    //file Reading line by line with FWRITE METHOD AND FILE() METHOD
     
     //     if(isset($_POST['name'])){
     //     $name = $_POST['name'];
@@ -43,7 +43,7 @@
     //         echo "Names Entered are:";
     //         $fread = file('sms.txt');
     //         $count = 1;
-    //         $count_read = count($fread);
+    //         $count_read = count($fread);         //count function determine size of an aaray returned by file() method
     //         foreach($fread as $names){
     //             echo trim($names);              //Remove white space at the end and beginning of an array/output with TRIM METHOD.
     //             if($count < $count_read){
