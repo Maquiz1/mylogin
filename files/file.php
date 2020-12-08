@@ -135,7 +135,7 @@
     // //$error = $_FILES['file']['error'];
     // if(isset($name)){
     //     if(!empty($name)){
-    //         $location = "uploads/";
+    //         $location = "filesUploaded/";
     //         $sizeMax = 2097152;
 
     //         if($size <= $sizeMax && ($type == 'image/jpeg' || $type == 'image/jpg') && ($extension == 'jpeg' || $extension == 'jpg')){

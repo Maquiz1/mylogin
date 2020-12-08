@@ -58,11 +58,10 @@
             $fileSize = filesize($ipCount);
             $countOpen = fopen($ipCount,'r');
             $countRead = fread($countOpen,$fileSize);
-            $currentCounter = $countRead;
             fclose($countOpen);
 
             //Increment the current number of ip by 1
-            $newCount =  $currentCount + 1;
+            $newCount =  $CountRead + 1;
 
             //Overwrite/Update the ncurrent with the new one
             $countOpen = fopen($ipCount,'w');
@@ -72,11 +71,11 @@
 
 
             //Finally Add the Ip to the Iplists
-            $ipOpen = fopen($ip,'w');
+            $ipOpen = fopen($ip,'a');
             $ipAdd = fwrite($ipOpen,$myIp."\n");
             if($ipAdd){
                 
-                echo 'ip Added';
+                echo 'ip Added to the List';
                 
             }else{
                 echo 'error adding ip address';
